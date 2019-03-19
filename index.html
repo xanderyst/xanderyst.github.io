@@ -14,8 +14,11 @@
             <iframe id="inner-frame" style="width: 90vw; height: 90vh;margin-left: 5vw">
 
             </iframe>
-            <div style="height:120px;width:120px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            <div style="max-height: 400px; overflow:hidden">
+                <div style="max-height: 400px; overflow:hidden; overflow-y: auto">
+                    <div style="height: 1500px">force content to scroll</div>
+                    <button id="targetme" type="button">Target a guide at me, please</button>
+                </div>
             </div>
             <script>
             (function(apiKey){
