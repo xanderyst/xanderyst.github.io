@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html>
     <body>
-      <select>
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="opel">Opel</option>
-      <option value="audi">Audi</option>
-      </select>
-        <script>
-        (function(apiKey){
-            (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
-            v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
-                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
-                y=e.createElement(n);y.async=!0;y.src='https://pendo-dev-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
-                z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
-        })('adf9791d-aaf7-4267-7889-b36daf70b014');
-
-        pendo.initialize({
-          visitor: {
-            id: 'testuser@pendo'
-          },
-                  disableGuideCenterContentSearch: true,
-          apiKey: 'adf9791d-aaf7-4267-7889-b36daf70b014',
-                  account: {
-            id: 12345,
-            city: 'Raleigh',
-            zipCode: '27601'
-          }
-        });
-        </script>
+      <button onClick="showMessage()">Click me</button>
+      <div id="hiddenMessage">Hi I'm hidden<div/>
     </body>
+    <script>
+    (function(apiKey){
+        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=[];
+        v=['initialize','identify','updateOptions','pageLoad'];for(w=0,x=v.length;w<x;++w)(function(m){
+            o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+            y=e.createElement(n);y.async=!0;y.src='https://pendo-dev-static.storage.googleapis.com/agent/static/'+apiKey+'/pendo.js';
+            z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+    })('adf9791d-aaf7-4267-7889-b36daf70b014');
+
+    pendo.initialize({
+      visitor: {
+        id: 'testuser@pendo'
+      },
+              disableGuideCenterContentSearch: true,
+      apiKey: 'adf9791d-aaf7-4267-7889-b36daf70b014',
+              account: {
+        id: 12345,
+        city: 'Raleigh',
+        zipCode: '27601'
+      }
+    });
+
+    var hidden = true;
+    function showMessage() {
+        if (hidden){
+            document.getElementById("hiddenMessage").style.display = 'none';
+        } else {
+            document.getElementById("hiddenMessage").style.display = 'block';
+        }
+        hidden = !hidden;
+    }
+    </script>
 </html>
