@@ -70,18 +70,18 @@
                     iframe.src = "/inner-frame.html?visitor=" +  queryString.visitor || (new Date()).getTime();
 
 
-        			// pendo.initialize({
-        			// 	visitor: {
-        			// 		id: queryString.visitor || 'testuser@pendo'
-        			// 	},
-                    //     disableGuideCenterContentSearch: true,
-        			// 	apiKey: 'adf9791d-aaf7-4267-7889-b36daf70b014',
-                    //     account: {
-        			// 		id: 12345,
-        			// 		city: 'Raleigh',
-        			// 		zipCode: '27601'
-        			// 	}
-        			// });
+        			pendo.initialize({
+        				visitor: {
+        					id: queryString.visitor || 'testuser@pendo'
+        				},
+                        disableGuideCenterContentSearch: true,
+        				apiKey: 'adf9791d-aaf7-4267-7889-b36daf70b014',
+                        account: {
+        					id: 12345,
+        					city: 'Raleigh',
+        					zipCode: '27601'
+        				}
+        			});
 
             })('adf9791d-aaf7-4267-7889-b36daf70b014');
 
